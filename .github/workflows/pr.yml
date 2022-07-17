@@ -17,4 +17,5 @@ jobs:
       - name: Create a pull request
         run: |
           sudo apt-get install hub
-          hub pull-request [-focp] [-b main] [-h develop]
+          sudo gem install gh 
+          #hub pull-request [-focp] [-b main] [-h develop]
