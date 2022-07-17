@@ -14,11 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install hub
-        uses: geertvdc/setup-hub@master
-          
-      - name: run hub commands
+    steps:
+      - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
         env:
-            GITHUB_USER: ${{ secrets.GITHUB_USER }}
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: hub pull-request [-focp] [-b develop] [-h main]
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
