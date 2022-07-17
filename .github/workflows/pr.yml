@@ -16,8 +16,9 @@ jobs:
         with:
           fetch-depth: 0    
       - run: |
-          gh pr create --fill -B develop develop2
+          gh pr create --fill -B develop 
           gh pr merge --merge
-          
+          gh pr create --fill -B develop2
+          gh pr merge --merge          
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
