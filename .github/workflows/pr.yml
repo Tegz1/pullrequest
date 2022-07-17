@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    name: Create PR workflow example
-    on: push
-    jobs:
-      create_pr:
-        runs-on: ubuntu-latest
-        steps:
-          - run: gh pr create --title "The fix" --body "This fixes the issue"
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Create PR workflow example
+        on: push
+        jobs:
+          create_pr:
+            runs-on: ubuntu-latest
+            steps:
+              - run: gh pr create --title "The fix" --body "This fixes the issue"
+                env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
