@@ -11,6 +11,10 @@ jobs:
   create_pr:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0    
       - run: gh pr create --fill -B develop
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
