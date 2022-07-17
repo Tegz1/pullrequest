@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Install hub
-          uses: geertvdc/setup-hub@master
+        uses: geertvdc/setup-hub@master
           
       - name: run hub commands
           env:
