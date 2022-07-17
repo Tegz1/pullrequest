@@ -14,8 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Create a pull request
-        run: |
-          sudo apt-get install hub
-          sudo gem install gh 
-          #hub pull-request [-focp] [-b main] [-h develop]
+      - name: Install hub
+          uses: geertvdc/setup-hub@master
+          
+      - name: run hub commands
+          env:
+            GITHUB_USER: ${{ secrets.GITHUB_USER }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            hub pull-request [-focp] [-b develop] [-h main]
