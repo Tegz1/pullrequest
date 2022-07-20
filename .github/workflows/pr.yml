@@ -27,7 +27,6 @@ jobs:
         if: always()
         uses: act10ns/slack@v1
         with:
-          status: ${{ job.status }}
           message: 'A new pull request was made'  
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}          
