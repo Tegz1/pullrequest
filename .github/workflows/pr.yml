@@ -22,4 +22,10 @@ jobs:
           gh pr merge --merge          
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          #
+      - name: post to slack
+      if: always()
+      uses: act10ns/slack@v1
+      with:
+        status: ${{ job.status }}
+        webhook-url: 'https://hooks.slack.com/services/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'
+        message: 'A new pull request was made'          
